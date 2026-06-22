@@ -1,0 +1,46 @@
+# Claude Code
+CLAUDE.md
+ai/
+memo.txt
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# SQLite
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# pnpm
+.pnpm-store/
+
+# Vite
+*.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Test coverage
+coverage/
