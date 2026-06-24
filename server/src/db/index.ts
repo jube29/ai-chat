@@ -4,10 +4,14 @@ import Database from "better-sqlite3";
 import { drizzle } from "drizzle-orm/better-sqlite3";
 import * as schema from "./schema";
 
-const DB_FILE = "./data/app.db";
+// Configurable so tests can point at an in-memory DB (":memory:") for isolation.
+const DB_FILE = process.env.DB_FILE ?? "./data/app.db";
 
 // better-sqlite3 creates the file but not its parent directory.
-mkdirSync(dirname(DB_FILE), { recursive: true });
+// (":memory:" has no directory component — mkdir of "." is a harmless no-op.)
+if (DB_FILE !== ":memory:") {
+  mkdirSync(dirname(DB_FILE), { recursive: true });
+}
 
 const sqlite = new Database(DB_FILE);
 
