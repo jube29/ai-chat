@@ -1,1 +1,59 @@
 @import "tailwindcss";
+
+/* Light theme tokens mapped to the project style guide (Tailwind palette). */
+:root {
+  --radius: 0.625rem;
+  --background: #ffffff; /* bg primary (white) */
+  --foreground: #171717; /* text primary (neutral-900) */
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --popover: #ffffff;
+  --popover-foreground: #171717;
+  --primary: #4338ca; /* brand-primary (indigo-700) */
+  --primary-foreground: #ffffff; /* text primary-invert */
+  --secondary: #e5e7eb; /* bg secondary (gray-200) */
+  --secondary-foreground: #171717;
+  --muted: #fafafa; /* bg tertiary (neutral-50) */
+  --muted-foreground: #737373; /* text tertiary / hint (neutral-500) */
+  --accent: #eef2ff; /* brand-subtle (indigo-50) */
+  --accent-foreground: #4338ca; /* brand (indigo-700) */
+  --destructive: #dc2626; /* error (red-600) */
+  --border: #e5e5e5; /* line primary (neutral-200) */
+  --input: #e5e5e5; /* form border (neutral-200) */
+  --ring: #4f46e5; /* brand-solid (indigo-600), branded focus */
+}
+
+@theme inline {
+  --font-sans: "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
